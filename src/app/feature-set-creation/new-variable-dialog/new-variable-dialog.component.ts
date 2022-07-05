@@ -18,7 +18,7 @@ const variables = require('../../core/automatic-variables.json');
 export class NewVariableDialogComponent implements OnInit {
 
   fhirpathInputType = '1';
-  pattern = '\/[a-zA-Z]+(?:.\?[a-zA-Z\&\+\-\=]+)'
+  pattern = '\/[a-zA-Z]+(?:.\?[a-zA-Z\&\+\-\=]+)';
   projectType: string;
   selection = 'auto';
   variables: any;
@@ -37,7 +37,7 @@ export class NewVariableDialogComponent implements OnInit {
     selectedVariable: new FormControl('', Validators.required),
     fieldData: new FormControl(''),
 
-  })
+  });
 
   requiredFields = {
     name: true,
@@ -47,7 +47,7 @@ export class NewVariableDialogComponent implements OnInit {
     variable_type: true,
     fieldData: true,
     selectedVariable: true,
-  }
+  };
 
 
   constructor(
@@ -82,7 +82,7 @@ export class NewVariableDialogComponent implements OnInit {
 
   selectvariable(event): void {
     this.selectedVariable = event.value;
-    console.log('selected variable:', this.selectedVariable)
+    console.log('selected variable:', this.selectedVariable);
     this.variableForm.get('selectedVariable').setValue(event.value);
     if (event.value.fieldType === 'disabled') {
       this.inputDisabled = true;
@@ -94,14 +94,10 @@ export class NewVariableDialogComponent implements OnInit {
     this.variableForm.get('variable_data_type').setValue(event.value.dataType);
     this.variableForm.get('fhir_query').setValue(event.value.fhirQuery);
     this.variableForm.get('fhir_path').setValue(event.value.fhirPath);
-
-    
-
   }
 
   setValueToQuery(): void {
     console.log('variable form: ', this.variableForm.get('fhir_query').valid);
-    
     this.fieldData = this.variableForm.get('fieldData').value;
 
     // get the data from the for to the variable body to save.
@@ -117,7 +113,6 @@ export class NewVariableDialogComponent implements OnInit {
 
     // set name of variable.
     this.data.name = this.variableForm.get('name').value;
-    
     // set value of variable_data_type (numeric, categorical)
     this.data.variable_data_type = this.variableForm.get('variable_data_type').value;
 
@@ -128,7 +123,6 @@ export class NewVariableDialogComponent implements OnInit {
       this.variableForm.get('selectedVariable').setValue(' ');
       this.variableForm.get('selectedVariable').touched;
     }
-    
     if (this.data.name === 'Readmitted in X days') {
       const result = parseInt(this.fieldData) + 1;
       this.data.fhir_path = this.data.fhir_path.replace('{integer_value + 1}', result.toString());
@@ -140,7 +134,7 @@ export class NewVariableDialogComponent implements OnInit {
 
       Object.keys(this.variableForm.controls).forEach(key => {
         this.variableForm.get(key).markAsTouched();
-        this.requiredFields[key] = this.variableForm.get(key).valid
+        this.requiredFields[key] = this.variableForm.get(key).valid;
       });
       this.userCommunication.createMessage(this.userCommunication.ERROR, 'There are empty fields that are required to fill');
     }

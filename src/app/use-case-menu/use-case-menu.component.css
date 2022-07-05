@@ -32,7 +32,7 @@ mat-card-content {
 }
 
 .predictive-study-card-header {
-  background-color: #6db044;
+  background-color: #66C6EF;
   color: white;
   width: 20em;
   border-radius: 5px 5px 0px 0px;
@@ -41,7 +41,7 @@ mat-card-content {
 
 .featuremanagement-card-header {
   width: 20em;
-  background-color: chocolate;
+  background-color: #66C190;
   color: white;
   border-radius: 5px 5px 0px 0px;
   padding-top: 0.5em;
@@ -49,7 +49,7 @@ mat-card-content {
 
 .dataSetmanagement-card-header {
   width: 20em;
-  background-color: #16a4dc;
+  background-color: #66C1A6;
   color: white;
   border-radius: 5px 5px 0px 0px;
   padding-top: 0.5em;
@@ -57,31 +57,32 @@ mat-card-content {
 
 .modelmanagement-card-header {
   width: 20em;
-  background-color: darkslateblue;
+  background-color: #66C4D8;
   color: white;
   border-radius: 5px 5px 0px 0px;
   padding-top: 0.5em;
 }
 
 .featuremanagement-buttom {
-  background-color: chocolate;
+  background-color: #66C190;
   bottom: 4%;
   position: absolute;
 }
 
 .featuremanagement-card-buttom {
-  background-color: #6db044;
+  background-color: #66C6EF;
   bottom: 4%;
   position: absolute;
 }
 
 .modelmanagement-buttom {
-  background-color: darkslateblue;
+  background-color: #66C4D8;
   bottom: 4%;
   position: absolute;
 }
 
 .dataset-buttom {
+  background-color: #66C1A6;
   bottom: 4%;
   position: absolute;
 }
@@ -132,19 +133,19 @@ mat-grid-tile{
     width: 100%;
     margin-bottom: 1em;
   }
-  
+
   .featuremanagement-card {
     width: 100%;
   }
-  
+
   .dataSetmanagement-card {
     width: 100%;
   }
-  
+
   .modelmanagement-card {
     width: 100%;
   }
-  
+
   .predictive-study-card{
     width: 100%;
   }
@@ -152,15 +153,15 @@ mat-grid-tile{
   .predictive-study-card-header {
     width: 100%;
   }
-  
+
   .featuremanagement-card-header {
     width: 100%;
   }
-  
+
   .dataSetmanagement-card-header {
     width: 100%;
   }
-  
+
   .modelmanagement-card-header {
     width: 100%;
   }

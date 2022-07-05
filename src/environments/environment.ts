@@ -5,10 +5,10 @@
 export const environment = {
   production: false,
   restApiUrl: 'http://localhost:3000/',
-  restApiPPDDM: 'https://f4h.srdc.com.tr/',
+  restApiPPDDM: 'http://localhost:7000/',
   keycloak: {
     // Url of the Identity Provider
-    issuer: 'https://keycloak.docker.atosresearch.eu/auth',
+    issuer: 'http://localhost:8080/auth',
     // URL of the SPA to redirect the user to after login
     // redirectUri: 'http://localhost:4200/uclist',
     redirectUri: 'https://portal.fair4health.eu/uclist',

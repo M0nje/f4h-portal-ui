@@ -3,7 +3,7 @@
 <div mat-dialog-content appearance="fill">
 
   <div >
-    <mat-radio-button (change)="selectionType('auto')" checked="checked">Automatic</mat-radio-button> 
+    <mat-radio-button (change)="selectionType('auto')" checked="checked">Automatic</mat-radio-button>
     <mat-radio-button (change)="selectionType('manual')">Manual</mat-radio-button>
   </div>
   <br>
@@ -24,7 +24,7 @@
     <div *ngIf="selection === 'manual'">
       <mat-form-field appearance="fill">
         <mat-label>FHIR Query</mat-label>
-        <input matInput formControlName="fhir_query" [pattern]="pattern"> 
+        <input matInput formControlName="fhir_query" [pattern]="pattern">
         <!-- <input matInput [(ngModel)]="data.fhir_query" [pattern]="pattern"> -->
         <mat-error *ngIf="!requiredFields.fhir_query" class="required-alert">
           Fhir query is <strong>required</strong>
@@ -54,25 +54,25 @@
           Variable type is <strong>required</strong>
         </mat-error>
       </mat-form-field>
+
     </div>
 
     <!-- container for an AUTOMATIC variable creation-->
     <div *ngIf="selection === 'auto'">
-      <mat-form-field appearance="fill">
-        <mat-label>Variable</mat-label>
-        <mat-select (selectionChange)="selectvariable($event)" formControlName="selectedVariable">
-          <mat-option *ngFor="let variable of variables" [value]="variable">{{variable.name}}</mat-option>
-        </mat-select>
-        <mat-error *ngIf="!requiredFields.selectedVariable" class="required-alert">
-          Select a variable.
-        </mat-error>
-      </mat-form-field>
-
+        <mat-form-field appearance="fill">
+          <mat-label>Predefined Variable</mat-label>
+          <mat-select (selectionChange)="selectvariable($event)" formControlName="selectedVariable">
+            <mat-option *ngFor="let variable of variables" [value]="variable">{{variable.name}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="!requiredFields.selectedVariable" class="required-alert">
+            Select a variable.
+          </mat-error>
+        </mat-form-field>
       <mat-form-field class="example-form-field">
         <mat-label>Input</mat-label>
         <input matInput type="text" disabled="true">
         <!--  <input matInput *ngIf="fieldType === 'text'" [(ngModel)]="fieldData">  -->
- 
+
         <input matInput *ngIf="fieldType === 'text'" formControlName="fieldData">
         <input matInput type="number" *ngIf="fieldType === 'number'" formControlName="fieldData">
         <mat-error *ngIf="!requiredFields.fieldData" class="required-alert">
@@ -96,15 +96,15 @@
 
   </form>
 
- 
 
-  
+
+
   <br>
   </div>
 
 
 
-  
+
 
 <br>
 <div mat-dialog-actions>
